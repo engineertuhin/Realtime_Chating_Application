@@ -148,7 +148,7 @@ $get1= new mas;
 
                                     <input type="file" id='image' name="images" style="position:absolute;z-index:1;" > <div style="text-align: center; position:relative;height:1px" id="type"></div> <p style="text-align: right; position:relative;margin-right:5px "  id='seen' ></p>
                                         <div class="input-group">
-                                         <input id="sms" name="sms" type="text" class="form-control input-sm rounded" placeholder="Say something"> <span class="input-group-btn"> <button name="submit" id='text' type="submit" class="btn btn-sm btn-danger font-bold btn-rounded" type="button">Send</button> </span>                                            </div>
+                                         <input  autocomplete="off"  id="sms" name="sms" type="text" class="form-control input-sm rounded" placeholder="Say something"> <span class="input-group-btn"> <button name="submit" id='text' type="submit" class="btn btn-sm btn-danger font-bold btn-rounded" type="button">Send</button> </span>                                            </div>
                                         </form>
                                 </footer>
                             </section>

@@ -61,10 +61,10 @@ $object=new a;
 
                                            ?>
                                           <article class="chat-item left"> 
-                                          <?php if(($s==cccc)==false):?>
+                                          <?php if(($s=="cccc")==false):?>
                                           
                                           
-                                          <a href="#" class="pull-left thumb-sm avatar"><img style="height:35px" src="classes/afterlogin/image/<?php echo $getimage['image']?>" class="img-circle"></a>
+                                          <a href="#" class="pull-left thumb-sm avatar"><img style="height:35px" src="classes/afterlogin/image/defult/defult.png" class="img-circle"></a>
                                           
                                             <section class="chat-body">
                                                 <div class="panel b-light text-sm m-b-none">
@@ -88,9 +88,9 @@ $object=new a;
                                            $getimage=$myimage->fetch_assoc();
                                            ?>
                                      <article  class="chat-item right"> 
-                                     <?php if(($s==cccc)==false):?>
+                                     <?php if(($s=="cccc")==false):?>
                                         <a href="#" class="pull-right thumb-sm avatar">
-                                        <img style="height:35px" src="classes/afterlogin/image/<?php echo $getimage['image']?>" class="img-circle"></a>
+                                        <img style="height:35px" src="classes/afterlogin/image/defult/defult.png" class="img-circle"></a>
                                             <section class="chat-body">
                                                 <div class="panel bg-light dk text-sm m-b-none">
                                                     <div class="panel-body"> <span class="arrow right"></span>
