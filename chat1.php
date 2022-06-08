@@ -49,6 +49,168 @@ $get1= new mas;
     <link rel="stylesheet" href="css/app.v1.css" type="text/css" />
     <!--[if lt IE 9]> <script src="js/ie/html5shiv.js"></script> <script src="js/ie/respond.min.js"></script> <script src="js/ie/excanvas.js"></script> <![endif]-->
     <link rel="stylesheet" href="css/min.css">
+    <style>
+        
+
+.news-feed {
+  width: 100%;
+  min-height: 100px;
+  margin: 10px auto 0;
+  padding: 10px;
+
+
+}
+
+.loading {
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: loadingAnimation;
+  -webkit-animation-timing-function: linear;
+  background: #f6f7f8;
+  background-image: -webkit-linear-gradient(left, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-image: linear-gradient(left, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-repeat: no-repeat;
+  background-size: 200% auto;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.load-blocker {
+  background: #FFF;
+  position: absolute;
+  display: block;
+ 
+}
+
+.load-1 {
+  height: 35px;
+  width: 10px;
+  top: 0;
+  left: 40px;
+}
+
+.load-2 {
+  width: 450px;
+  height: 5px;
+  top: 0;
+  left: 50px;
+}
+
+.load-3 {
+  width: 450px;
+  height: 5px;
+  top: 15px;
+  left: 50px;
+}
+
+.load-4 {
+  width: 450px;
+  height: 10px;
+  top: 5px;
+  left: 180px;
+}
+
+.load-5 {
+  width: 450px;
+  height: 10px;
+  top: 20px;
+  left: 120px;
+}
+
+.load-6 {
+  width: 450px;
+  height: 5px;
+  top: 30px;
+  left: 40px;
+}
+
+.load-7 {
+  width: 100%;
+  height: 10px;
+  top: 35px;
+  left: 40px;
+}
+
+.load-8 {
+  width: 100%;
+  height: 10px;
+  top: 40px;
+  left: 0px;
+}
+
+.load-9 {
+  width: 100%;
+  height: 10px;
+  top: 50px;
+  left: 250px;
+}
+
+.load-10 {
+  width: 100%;
+  height: 10px;
+  top: 70px;
+  left: 300px;
+}
+
+.load-11 {
+  width: 100%;
+  height: 10px;
+  top: 90px;
+  left: 180px;
+}
+
+.load-12 {
+  width: 100%;
+  height: 10px;
+  top: 60px;
+  left: 0px;
+}
+
+.load-13 {
+  width: 100%;
+  height: 10px;
+  top: 80px;
+  left: 0px;
+}
+
+
+
+@-webkit-keyframes loadingAnimation{
+  0%{
+    background-position: 150% 0;
+  }
+  100%{
+    background-position: -150% 0;
+  }
+}
+
+
+.loader {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  border: 10px solid orange;
+  border-top-color: #002147;
+  box-sizing: border-box;
+  background: transparent;
+  animation: loading 1s linear infinite;
+
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  0% {
+    transform: rotate(360deg);
+  }
+}
+.imglod{
+    display: grid;
+  place-items: center;
+}
+    </style>
 
 </head>
 
@@ -111,9 +273,15 @@ $get1= new mas;
                                        
                             
                                 <div id="showmy" style="margin-bottom:70px;">
-                             
-
-
+                                <div id="minchat">
+                                    
+                                </div>
+                               
+                                <div class="imglod">
+                               
+                                </div>
+                                <div id="scroll" >
+                                </div>
                                 </div>
                                 <div  id="sepn"></div>
                                         
@@ -148,7 +316,7 @@ $get1= new mas;
 
                                     <input type="file" id='image' name="images" style="position:absolute;z-index:1;" > <div style="text-align: center; position:relative;height:1px" id="type"></div> <p style="text-align: right; position:relative;margin-right:5px "  id='seen' ></p>
                                         <div class="input-group">
-                                         <input id="sms" name="sms" type="text" class="form-control input-sm rounded" placeholder="Say something"> <span class="input-group-btn"> <button name="submit" id='text' type="submit" class="btn btn-sm btn-danger font-bold btn-rounded" type="button">Send</button> </span>                                            </div>
+                                         <input  autocomplete="off"  id="sms" name="sms" type="text" class="form-control input-sm rounded" placeholder="Say something"> <span class="input-group-btn"> <button name="submit" id='text' type="submit" class="btn btn-sm btn-danger font-bold btn-rounded" type="button">Send</button> </span>                                            </div>
                                         </form>
                                 </footer>
                             </section>
@@ -163,7 +331,7 @@ $get1= new mas;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
 (function($){
-
+  
 $(document).on('submit','form#from',function(event){
     event.preventDefault();
 var username=$('#username').val();
@@ -172,11 +340,13 @@ var myname=$('#myname').val();
 var myemail=$('#myemail').val();
 var myid=$('#myid').val();
 var sms=$('#sms').val();
-
-
+var lod='<div class="news-feed load-more"><div class="loading"><div class="load-blocker load-1"></div><div class="load-blocker load-2"></div><div class="load-blocker load-3"></div><div class="load-blocker load-4"></div><div class="load-blocker load-5"></div><div class="load-blocker load-6"></div><div class="load-blocker load-7"></div><div class="load-blocker load-8"></div><div class="load-blocker load-9"></div><div class="load-blocker load-10"></div><div class="load-blocker load-11"></div><div class="load-blocker load-12"></div><div class="load-blocker load-13"></div></div></div>';
 if(sms==""){
 
 }else{
+    $('#scroll').append(lod);
+    $('#sms').val('');
+    window.scrollTo(0, document.body.scrollHeight);
 $.ajax({
 url:'classes/afterlogin/sms.php',
 data: {
@@ -192,7 +362,8 @@ sms:sms,
 },
 method:'post',
 success:function(data){
-    $('#sms').val('');
+    $('.news-feed').remove();
+  
 }
 
 
@@ -227,7 +398,7 @@ userid:userid,
 },
 method:'POST',
  success:function(data){
-     $('#showmy').html(data);
+     $('#minchat').html(data);
 
     }
 
@@ -348,9 +519,11 @@ $(document).on('submit','form#from',function(event){
 
      
   }else{
-   
-        $('#sepn').html('<img style="width:100%;max-width: 400px; height: auto;" src="audio/a.gif">'); 
+   var loadimg=' <div class="loader"></div>'; 
+$('.imglod').html(loadimg)
 
+$("#text").prop("disabled",true);
+window.scrollTo(0, document.body.scrollHeight);
    
     $.ajax({
 
@@ -360,11 +533,10 @@ processData:false,
 contentType:false,
 method:'POST',
 success:function(data){
-    $('#image').val(''); 
-    setTimeout(function(){
-        $('#sepn').remove();
-    },4000);
-    
+console.log(data);
+    $('.imglod').empty()
+    $("#text").prop("disabled",false);
+    $('#image').val('')
 }
 
 
@@ -438,7 +610,7 @@ success:function(data){
 }
 setInterval(function(){
     get(); 
-},1000);
+},688);
 
 
 

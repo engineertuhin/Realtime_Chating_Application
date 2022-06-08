@@ -2,8 +2,8 @@
 
 class db{
 private $host="localhost";
-private $user="admin";
-private $pass="00";
+private $user="root";
+private $pass="";
 private $database="messenger";
 public function connection(){
 

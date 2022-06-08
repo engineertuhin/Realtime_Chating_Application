@@ -57,15 +57,26 @@ $object=new a;
                                                $imagedata="select * from useraccount where id='$user'";
                                                $myimage=$con->query($imagedata);
                                                $getimage=$myimage->fetch_assoc();
-
+                                               $image=$getimage['image'];
+                                               $extention=explode('.',$image);
+                                               $lastx=end($extention);
 
                                            ?>
                                           <article class="chat-item left"> 
-                                          <?php if(($s==cccc)==false):?>
+                                          <?php if(($s=="cccc")==false):?>
                                           
                                           
-                                          <a href="#" class="pull-left thumb-sm avatar"><img style="height:35px" src="classes/afterlogin/image/<?php echo $getimage['image']?>" class="img-circle"></a>
-                                          
+                                            <a href="#" class="pull-left thumb-sm avatar"><img style="height:35px" src="<?php
+                                           if(in_array($lastx,['jpg','png'])==true):
+                                          ?>
+                                    classes/afterlogin/image/<?php echo $getimage['image']?>
+                                         <?php
+                                          else :
+                                            ?>
+                                            classes/afterlogin/image/defult/defult.png
+                                            
+                                         
+                                        <?php endif ?>" class="img-circle"></a> 
                                             <section class="chat-body">
                                                 <div class="panel b-light text-sm m-b-none">
                                                     <div class="panel-body"> <span class="arrow left"></span>
@@ -75,7 +86,17 @@ $object=new a;
                                                 </div> <small class="text-muted"><i class="fa fa-ok text-success"></i><?php echo $date?></small> </section>
 
                                           <?php else:?>
-                                            <a href="#" class="pull-left thumb-sm avatar"><img style="height:35px" src="classes/afterlogin/image/<?php echo $getimage['image']?>" class="img-circle"></a> 
+                                            <a href="#" class="pull-left thumb-sm avatar"><img style="height:35px" src="<?php
+                                           if(in_array($lastx,['jpg','png'])==true):
+                                          ?>
+                                    classes/afterlogin/image/<?php echo $getimage['image']?>
+                                         <?php
+                                          else :
+                                            ?>
+                                            classes/afterlogin/image/defult/defult.png
+                                            
+                                         
+                                        <?php endif ?>" class="img-circle"></a> 
                                             <img  class="zoom" style="margin-left:10px;width:100%;max-width: 400px; height: auto; " src="classes/afterlogin/textimage/<?php echo  $data['images']?>" alt=""><h1 style="display:none" >dfsd</h1>
                                                 <small class="text-muted"><br> <i class="fa fa-ok text-success"></i><?php echo $date?></small> </section>
 
@@ -86,11 +107,24 @@ $object=new a;
                                            $imagedata="select * from useraccount where id='$myid'";
                                            $myimage=$con->query($imagedata);
                                            $getimage=$myimage->fetch_assoc();
+                                           $image=$getimage['image'];
+                                           $extention=explode('.',$image);
+                                           $lastx=end($extention);
                                            ?>
                                      <article  class="chat-item right"> 
-                                     <?php if(($s==cccc)==false):?>
+                                     <?php if(($s=="cccc")==false):?>
                                         <a href="#" class="pull-right thumb-sm avatar">
-                                        <img style="height:35px" src="classes/afterlogin/image/<?php echo $getimage['image']?>" class="img-circle"></a>
+                                        <img style="height:35px" src="<?php
+                                           if(in_array($lastx,['jpg','png'])==true):
+                                          ?>
+                                    classes/afterlogin/image/<?php echo $getimage['image']?>
+                                         <?php
+                                          else :
+                                            ?>
+                                            classes/afterlogin/image/defult/defult.png
+                                            
+                                         
+                                        <?php endif ?>" class="img-circle"></a>
                                             <section class="chat-body">
                                                 <div class="panel bg-light dk text-sm m-b-none">
                                                     <div class="panel-body"> <span class="arrow right"></span>
@@ -99,7 +133,17 @@ $object=new a;
                                                 </div> <small class="text-muted"><?php echo $date?></small> </section>
                                                  <?php else:?>
                                                     <a href="#" class="pull-right thumb-sm avatar">
-                                        <img style="height:35px" src="classes/afterlogin/image/<?php echo $getimage['image']?>" class="img-circle"></a>
+                                                    <img style="height:35px" src="<?php
+                                           if(in_array($lastx,['jpg','png'])==true):
+                                          ?>
+                                    classes/afterlogin/image/<?php echo $getimage['image']?>
+                                         <?php
+                                          else :
+                                            ?>
+                                            classes/afterlogin/image/defult/defult.png
+                                            
+                                         
+                                        <?php endif ?>" class="img-circle"></a>
                                             <section class="chat-body">
                                                 <span class="arrow right"></span>
                                                 <img class="zoom" style="width:100%;max-width: 400px; height: auto;" src="classes/afterlogin/textimage/<?php echo  $data['images']?>" alt=""><h1 style="display:none" >dfsdxc</h1>

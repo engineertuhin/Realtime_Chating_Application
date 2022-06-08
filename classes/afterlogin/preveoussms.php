@@ -46,7 +46,7 @@ $object=new a;
 
                                            ?>
                                           <article class="chat-item left"> 
-                                          <?php if(($s==cccc)==false):?>
+                                          <?php if(($s=='cccc')==false):?>
                                           
                                           
                                           <a href="#" class="pull-left thumb-sm avatar"><img style="height:35px" src="classes/afterlogin/image/<?php echo $getimage['image']?>" class="img-circle"></a>
@@ -72,7 +72,7 @@ $object=new a;
                                            $getimage=$myimage->fetch_assoc();
                                            ?>
                                      <article  class="chat-item right"> 
-                                     <?php if(($s==cccc)==false):?>
+                                     <?php if(($s=='cccc')==false):?>
                                         <a href="#" class="pull-right thumb-sm avatar">
                                         <img style="height:35px" src="classes/afterlogin/image/<?php echo $getimage['image']?>" class="img-circle"></a>
                                             <section class="chat-body">

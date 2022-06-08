@@ -53,7 +53,7 @@ $userid=$_REQUEST['userid'];
   $sql="INSERT INTO `massage`(`name`, `email`, `massage`, `name1`, `email1`, `ida`, `ids`,sound,images) VALUES ('$username','$useremail','cccc','$mynema','$myemail','$myid','1','1','$convert')";
    $done=$con->query($sql);
    if($done==true){
-
+move_uploaded_file($temp_name,"classes/afterlogin/textimage/".$convert);
    
 
    }
