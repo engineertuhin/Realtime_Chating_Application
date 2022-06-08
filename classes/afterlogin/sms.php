@@ -66,6 +66,7 @@ $object=new a;
                                           <?php if(($s=="cccc")==false):?>
                                           
                                           
+<<<<<<< HEAD
                                             <a href="#" class="pull-left thumb-sm avatar"><img style="height:35px" src="<?php
                                            if(in_array($lastx,['jpg','png'])==true):
                                           ?>
@@ -77,6 +78,10 @@ $object=new a;
                                             
                                          
                                         <?php endif ?>" class="img-circle"></a> 
+=======
+                                          <a href="#" class="pull-left thumb-sm avatar"><img style="height:35px" src="classes/afterlogin/image/defult/defult.png" class="img-circle"></a>
+                                          
+>>>>>>> 6ea4bf16f369b445cfa8247648e213fce4a70645
                                             <section class="chat-body">
                                                 <div class="panel b-light text-sm m-b-none">
                                                     <div class="panel-body"> <span class="arrow left"></span>
@@ -114,6 +119,7 @@ $object=new a;
                                      <article  class="chat-item right"> 
                                      <?php if(($s=="cccc")==false):?>
                                         <a href="#" class="pull-right thumb-sm avatar">
+<<<<<<< HEAD
                                         <img style="height:35px" src="<?php
                                            if(in_array($lastx,['jpg','png'])==true):
                                           ?>
@@ -125,6 +131,9 @@ $object=new a;
                                             
                                          
                                         <?php endif ?>" class="img-circle"></a>
+=======
+                                        <img style="height:35px" src="classes/afterlogin/image/defult/defult.png" class="img-circle"></a>
+>>>>>>> 6ea4bf16f369b445cfa8247648e213fce4a70645
                                             <section class="chat-body">
                                                 <div class="panel bg-light dk text-sm m-b-none">
                                                     <div class="panel-body"> <span class="arrow right"></span>
